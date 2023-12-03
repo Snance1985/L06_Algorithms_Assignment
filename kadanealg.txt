@@ -1,0 +1,28 @@
+Pseudocode:
+function findArray(arr):
+    if arr is empty:
+        return 0  // Handle the case of an empty input array.
+
+    maxSum = arr[0]  // Initialize maxSum with the first element of the array.
+    currentSum = arr[0]  // Initialize currentSum with the first element of the array.
+
+    for i from 1 to length of arr - 1:
+        // Compare the current element with the sum of the current subarray.
+        // If the current element is greater, start a new subarray.
+        currentSum = max(arr[i], currentSum + arr[i])
+
+        // Update maxSum if the current subarray sum is greater.
+        maxSum = max(maxSum, currentSum)
+    return maxSum
+
+
+Space and Time Complexity:
+    Time Complexity: O(n)
+        The algorithm iterates through the input array once, where "n" is the length of the array.
+        Each element is processed exactly once, and the algorithm maintains two variables (maxSum and currentSum) that are updated in constant time operations.
+        Therefore, the time complexity is linear, O(n), making it very efficient for large arrays.
+
+    Space Complexity: O(1)
+        The algorithm uses a constant amount of additional space to store the two variables: maxSum and currentSum.
+        It doesn't require any additional data structures or arrays that grow with the input size.
+        As a result, the space complexity is constant, O(1), which means the algorithm is highly memory-efficient and doesn't consume additional memory based on the size of the input.
